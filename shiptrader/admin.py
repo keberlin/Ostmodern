@@ -5,9 +5,11 @@ from .forms import *
 
 class StarshipAdmin(admin.ModelAdmin):
     form = StarshipForm
+    ordering = ('id',)
 
 class ListingAdmin(admin.ModelAdmin):
     form = ListingForm
+    ordering = ('id',)
 
 admin.site.register(Starship, StarshipAdmin)
 admin.site.register(Listing, ListingAdmin)

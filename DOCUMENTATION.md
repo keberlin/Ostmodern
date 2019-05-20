@@ -12,14 +12,17 @@ POST /api/starship - create a new starship
     'crew' - integer
     'passengers' - integer
 DELETE /api/starship/?id=<id> - removes the starship with id <id>
-GET /api/listings - lists all listings
+GET /api/listings - lists all listings in time of creation order
+GET /api/listings?starship_class=<class> - lists all listings with the starship_class <class> in time creation order
 GET /api/listing/?id=<id> - list listing with id <id>
 POST /api/listing - create a new listing
   must have the following fields within the POST data:
     'name' - text
-    'starship_type' - index to available starship
-    'price' - float
+    'ship_type' - index to available starship
+    'price' - integer
 DELETE /api/listing/?id=<id> - removes the listing with id <id>
+GET /api/activate/?id=<id> - activate listing with id <id>
+GET /api/deactivate/?id=<id> - deactivate listing with id <id>
 
 Notes:
 - In order to allow the use of the curl commands the django.middleware.csrf.CsrfViewMiddleware middleware has been disabled.
